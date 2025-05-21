@@ -1,0 +1,137 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -ms-overflow-style: scrollbar;
+  -webkit-app-region: drag;
+}
+
+/* Hide the bubble controls completely */
+.bubbles {
+  display: none;
+}
+
+/* macOS Window Controls */
+.macos-window-controls {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.container:hover .macos-window-controls {
+  opacity: 1;
+}
+
+.macos-btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Default state for Mac OS buttons */
+.macos-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.macos-btn.close::before {
+  content: '×';
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.macos-btn.minimize::before {
+  content: '−';
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.macos-btn.maximize::before {
+  content: '+';
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* Hover state - add colored background */
+.macos-btn.close:hover {
+  background-color: rgb(255, 95, 86);
+}
+
+.macos-btn.minimize:hover {
+  background-color: rgb(255, 189, 46);
+}
+
+.macos-btn.maximize:hover {
+  background-color: rgb(39, 201, 63);
+}
+
+/* Change symbol color on hover */
+.macos-btn.close:hover::before,
+.macos-btn.minimize:hover::before,
+.macos-btn.maximize:hover::before {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.container{
+  z-index: 12;
+  width: 360px;
+  padding: 15px;
+  padding-top: 40px; 
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.671);
+  position: relative; /* For absolute positioning of controls DONT REMOVE */
+}
+.container input[type="text"]{
+  width: 100%;
+  height: 100px;
+  margin: 0 3px;
+  outline: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  text-align: right;
+  padding-right: 10px;
+  background: transparent;
+}
+
+.container input[type="button"]{
+  height: 65px;
+  color: rgb(0, 0, 0);
+  width: calc(100% / 4 - 5px);
+  background: transparent;
+  border-radius: 12px;
+  margin-top: 15px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.container input[type="button"]:hover{
+  background: rgba(1, 103, 255, 0.508);
+}

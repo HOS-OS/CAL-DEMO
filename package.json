@@ -1,0 +1,19 @@
+{
+  "name": "electron-calculator",
+  "version": "1.0.0",
+  "description": "A simple calculator desktop app using Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Hunter Null",
+  "license": "MIT",
+  "keywords": [
+    "electron",
+    "calculator",
+    "desktop-app"
+  ],
+  "devDependencies": {
+    "electron": "^30.0.0"
+  }
+}
